@@ -5,7 +5,7 @@ using namespace std;
 int main(){	
 
 	double loan, per, money;
-	double inters =0, total=0, pay=0, pbalance=0, nbalance=0;
+	double inters , total, pay, pbalance, nbalance;
 	int year = 1;
 
 	cout << "Enter initial loan: ";
@@ -29,50 +29,31 @@ int main(){
 		if(year == 1){
 			nbalance = loan;
 		}
-		
-		cout<< setw(13) << left << year;
-		
 		pbalance = nbalance;
-		cout << setw(13) << left << pbalance;
-		
 		inters = nbalance *(per/100.0);
-		cout << setw(13) << left << inters;
-		
 		total = pbalance + inters;
-		cout << setw(13) << left << total;
 		
 		pay = money;
 		if(loan < money){
 			pay = total;
 		}
-		cout << setw(13) << left << pay;
 		
 		nbalance = total - pay;
 		if(nbalance < 0){
 			nbalance = 0;
+			pay = total;
 		}
+		
+		cout<< setw(13) << left << year;
+		cout << setw(13) << left << pbalance;
+		cout << setw(13) << left << inters;
+		cout << setw(13) << left << total;
+		cout << setw(13) << left << pay;
 		cout << setw(13) << left << nbalance;
 		cout << "\n";	
 		year++;
-	} while (nbalance > pay );
-	if (nbalance > 1 ){
+	} while (nbalance > 1 );
 
-		cout << setw(13) << left << year; 
-		pbalance = nbalance;
-		cout << setw(13) << left << pbalance ;
-		inters = nbalance *(per/100.0);
-		cout << setw(13) << left << inters;
-		total = pbalance + inters;
-		cout << setw(13) << left << total;
-		pay = total;
-		cout << setw(13) << left << pay;
-		nbalance = total - pay;
-		if(nbalance < 0){
-			nbalance = 0;
-		}
-		cout << setw(13) << left << nbalance;
-
-	}
 	
 	return 0;
 }
