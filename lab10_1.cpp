@@ -31,17 +31,22 @@ int main(){
 		}
 		
 		cout<< setw(13) << left << year;
+		
 		pbalance = nbalance;
 		cout << setw(13) << left << pbalance;
+		
 		inters = nbalance *(per/100.0);
 		cout << setw(13) << left << inters;
+		
 		total = pbalance + inters;
 		cout << setw(13) << left << total;
+		
 		pay = money;
 		if(loan < money){
 			pay = total;
 		}
 		cout << setw(13) << left << pay;
+		
 		nbalance = total - pay;
 		if(nbalance < 0){
 			nbalance = 0;
@@ -50,9 +55,9 @@ int main(){
 		cout << "\n";	
 		year++;
 	} while (nbalance > pay );
-	if(nbalance != 0){
+	if (nbalance > 1 ){
 
-		cout << setw(13) << left << year+1; 
+		cout << setw(13) << left << year; 
 		pbalance = nbalance;
 		cout << setw(13) << left << pbalance ;
 		inters = nbalance *(per/100.0);
@@ -66,7 +71,6 @@ int main(){
 			nbalance = 0;
 		}
 		cout << setw(13) << left << nbalance;
-		cout << "\n";
 
 	}
 	
