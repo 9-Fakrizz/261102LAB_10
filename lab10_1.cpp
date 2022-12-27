@@ -37,10 +37,10 @@ int main(){
 		cout << setw(13) << left << inters;
 		total = pbalance + inters;
 		cout << setw(13) << left << total;
-		if(loan < money){
-			pay = loan;
-		}
 		pay = money;
+		if(loan < money){
+			pay = total;
+		}
 		cout << setw(13) << left << pay;
 		nbalance = total - pay;
 		if(nbalance < 0){
